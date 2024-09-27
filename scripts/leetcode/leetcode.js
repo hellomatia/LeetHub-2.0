@@ -72,7 +72,7 @@ const encode = data => btoa(unescape(encodeURIComponent(data)));
  */
 const upload = async (token, hook, content, problem, filename, sha, message) => {
   const path = getPath(problem, filename);
-  const URL = `https://api.github.com/repos/${hook}/contents/${path}`;
+  const URL = `https://api.github.com/repos/${hook}/contents/LeetCode/${path}`;
 
   let data = {
     message,
@@ -315,7 +315,7 @@ async function uploadGitWith409Retry(code, problemName, filename, commitMsg, opt
  */
 async function getGitHubFile(token, hook, directory, filename) {
   const path = getPath(directory, filename);
-  const URL = `https://api.github.com/repos/${hook}/contents/${path}`;
+  const URL = `https://api.github.com/repos/${hook}/contents/LeetCode/${path}`;
 
   let options = {
     method: 'GET',
